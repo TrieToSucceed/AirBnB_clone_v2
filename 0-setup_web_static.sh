@@ -11,7 +11,7 @@ sudo mkdir -p /data/web_static/shared
 
 # create index.html and symlink
 sudo echo -e "Hello World" | sudo tee "/data/web_static/releases/test/index.html"
-sudo ln -sf "/data/web_static/current" "/data/web_static/releases/test/"
+sudo ln -sf "/data/web_static/releases/test/" "/data/web_static/current"
 
 # change owners and alter config file, then restart nginx
 sudo chown -R ubuntu:ubuntu "/data/"
