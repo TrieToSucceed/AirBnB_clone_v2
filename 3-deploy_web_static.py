@@ -58,7 +58,7 @@ def do_deploy(archive_path):
         run("sudo rm -rf /data/web_static/releases/{}/web_static".format(
                 file_name.split('.')[0]
             ))
-        run("sudo rm -rf /data/web_static/current/")
+        run("sudo rm -rf /data/web_static/current")
         run("sudo ln -s /data/web_static/releases/{}"
             " /data/web_static/current/".format(
                 file_name.split('.')[0]
