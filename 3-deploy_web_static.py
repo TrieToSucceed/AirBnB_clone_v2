@@ -74,4 +74,6 @@ def deploy():
     Compress files and deploy to web servers
     """
     file_path = do_pack()
+    if file_path:
+        return False
     return (do_deploy(file_path))
