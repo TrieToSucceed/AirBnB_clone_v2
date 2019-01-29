@@ -30,7 +30,7 @@ def print_c_text(text):
     print c with passed in value
     """
     text = text.replace("_", " ")
-    return "c %s" % text
+    return "C %s" % text
 
 
 @app.route("/python/<text>", strict_slashes=False)
@@ -39,7 +39,7 @@ def print_python_text(text="is cool"):
     print python with passed in value
     """
     text = text.replace("_", " ")
-    return "python %s" % text
+    return "Python %s" % text
 
 
 @app.route("/number/<n>", strict_slashes=False)
