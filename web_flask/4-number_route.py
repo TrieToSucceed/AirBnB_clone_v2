@@ -43,16 +43,12 @@ def print_python_text(text="is cool"):
     return "Python %s" % text
 
 
-@app.route("/number/<n>", strict_slashes=False)
+@app.route("/number/<int:n>", strict_slashes=False)
 def print_number(n):
     """
     print number that is passed in
     """
-    try:
-        n = int(n)
-        return "%d is a number" % n
-    except:
-        pass
+    return "%d is a number" % n
 
 if __name__ == "__main__":
     app.run()
