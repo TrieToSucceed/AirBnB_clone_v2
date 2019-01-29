@@ -30,7 +30,7 @@ def print_c_text(text):
     print c with passed in value
     """
     text = text.replace("_", " ")
-    return "c %s" % text
+    return "c {}".format(text)
 
 if __name__ == "__main__":
     app.run()
