@@ -42,7 +42,7 @@ class DBStorage:
         """
         found_objects = {}
         if cls is not None:
-            for instance in self.__session.query(cls).all():
+            for instance in self.__session.query(eval(cls)).all():
                 key = "{}.{}".format(type(instance).__name__, instance.id)
                 found_objects[key] = instance
         else:
@@ -80,5 +80,8 @@ class DBStorage:
         Base.metadata.create_all(self.__engine)
         session_factory = sessionmaker(bind=self.__engine,
                                        expire_on_commit=False)
-        Session = scoped_session(session_factory)
-        self.__session = Session()
+        self.__session = scoped_session(session_factory)
+
+    def close(self):
+        """close private session attribute"""
+        self.__session.remove()
