@@ -43,42 +43,30 @@ def print_python_text(text="is cool"):
     return "Python %s" % text
 
 
-@app.route("/number/<n>", strict_slashes=False)
+@app.route("/number/<int:n>", strict_slashes=False)
 def print_number(n):
     """
     print number that is passed in
     """
-    try:
-        n = int(n)
-        return "%d is a number" % n
-    except:
-        pass
+    return "%d is a number" % n
 
 
-@app.route("/number_template/<n>", strict_slashes=False)
+@app.route("/number_template/<int:n>", strict_slashes=False)
 def display_page(n):
     """
     use number passed in as template for html
     """
-    try:
-        n = int(n)
-        return render_template("5-number.html", number=n)
-    except:
-        pass
+    return render_template("5-number.html", number=n)
 
 
-@app.route("/number_odd_or_even/<n>", strict_slashes=False)
+@app.route("/number_odd_or_even/<int:n>", strict_slashes=False)
 def display_odd_even(n):
     """
     determine if number is odd or even and then pass into template
     """
-    try:
-        n = int(n)
-        num_type = "odd" if n % 2 else "even"
-        return render_template("6-number_odd_or_even.html",
-                               number=n, num_type=num_type)
-    except:
-        pass
+    num_type = "odd" if n % 2 else "even"
+    return render_template("6-number_odd_or_even.html",
+                           number=n, num_type=num_type)
 
 if __name__ == "__main__":
     app.run()
