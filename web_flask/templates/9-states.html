@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>HBNB</TITLE>
+    </HEAD>
+    <BODY>
+    	{% if ( (state_id != False) and (states == none) ) %}
+	<H1>Not found!</H1>
+	{% elif state_id == false %}
+	<H1>States</H1>
+	<UL id="states">
+	{% for state in states %}
+		<LI>{{state.id}}: <B>{{state.name}}</B></LI>
+	{% endfor %}
+      	</UL>
+	{% else %}
+	<H1>State: {{states[0].name}}</H1>
+	<H3>Cities:</H3>
+	<UL id="cities">
+	{% for city in states[0].cities %}
+		<LI>{{city.id}}: <B>{{city.name}}</B></LI>
+	{% endfor %}
+	</UL>
+	{% endif %}
+    </BODY>
+</HTML>
