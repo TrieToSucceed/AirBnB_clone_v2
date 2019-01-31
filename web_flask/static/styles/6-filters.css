@@ -1,77 +1,122 @@
-.container .filters {
-    position: relative;
-    background: white;
-    height: 70px;
-    width: 100%;
-    border: 1px solid #DDDDDD;
-    border-radius: 4px;
+.filters {
+	background-color: #FFFFFF;
+  	height: 70px;
+	width: 100%;
+	border: solid 1px #DDDDDD;
+	border-radius: 4px;
+	position: relative;
 }
-button {
-    position: absolute;
-    font-size: 18px;
-    background: #FF5A5F;
-    color: #FFFFFF;
-    height: 48px;
-    width: 20%;
-    border-style: none;
-    border-radius: 4px;
-    top: 15%;
-    right: 30px;
-}
-button:hover {
-    opacity: 0.9;
-}
-.filters div {
-    display: inline-grid;
-}
-.filters h2 {
-    margin-left: 15%;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-weight: 600;
-}
-.filters h3 {
-    margin-left: 15%;
-    margin-bottom: 0;
-    font-weight: 600;
-}
-.filters h4 {
-    margin-left: 15%;
-    margin-top: 0;
-    font-weight: 400;
-    font-size: 14px;
-}
+
 .locations {
-    height: 100%;
-    width: 25%;
-    border-right: 1px solid #DDDDDD;
+  	border-right: solid 1px #DDDDDD;
 }
-.amenities {
-    height: 100%;
-    width: 25%;
+
+.filters div{
+	height: 100%;
+	width: 25%;
+	display: inline-block;
+	position: relative;
+	margin-left: 50px;
 }
-.popover {
-    visibility: hidden;
-    width: 100%;
-    border: 1px solid #DDDDDD;
-    border-radius: 4px;
-    background: #FAFAFA;
-    padding-bottom: 25px;
-    height: 300px;
-    overflow: scroll;
+
+.filters h3 {
+  	font-weight: 600;
+	position: absolute;
+	top: -3px;
 }
-.amenities .popover {
-    padding: 20px 0;
-    margin-left: -5px;
-    margin-top: 1%;
+
+.filters h4 {
+  	font-weight: 400;
+	font-size: 14px;
+	position: absolute;
+	top: 18px;
 }
+
+button {
+  	font-size: 18px;
+	background-color: #FF5A5F;
+	color: #FFFFFF;
+	height: 48px;
+	width: 20%;
+	border-style: none;
+	border-radius: 4px;
+	position: absolute;
+	top: 10px;
+	right: 50px;
+}
+
+button:hover {
+  	opacity: 0.9;
+}
+
 .locations .popover {
-    margin-top: 1%;
+  	background-color: #FAFAFA;
+	border: solid 1px #DDDDDD;
+	border-radius: 4px;
+  	display: none;
+	width: 120%;
+	height: auto;
+	margin: 100px;
+	right: 60.5%;
+	top: -43%;
+	z-index: 1;
+	position: relative;
 }
+
+.amenities .popover {
+  	background-color: #FAFAFA;
+	border: solid 1px #DDDDDD;
+	border-radius: 4px;
+  	display: none;
+	width: 100%;
+	height: auto;
+	top: 100%;
+	right: 40.3%;
+	z-index: 1;
+	position: relative;
+}
+
+.popover {
+	overflow-y: auto;
+	max-height: 300px;
+ }
+
+.locations:hover .popover,
+.amenities:hover .popover {
+  	display: block;
+}
+
+.filters .amenities {
+  	position: absolute;
+}
+
+.popover li {
+  	margin: 10px;
+}
+
+.popover h2 {
+  	padding: 0px;
+  	margin: 0px;
+	font-size: 16px;
+}
+
 .popover ul {
-    list-style-type: none;
+      list-style: none;
+      margin: 0px;
 }
-.amenities:hover .popover,
-.locations:hover .popover {
-    visibility: visible;
+
+.innerul {
+  	padding-left: 7px;
+}
+
+.outerli {
+  padding-bottom: 2px;
+ }
+
+.innerul li {
+  margin: 5px;
+ }
+
+.popover > ul {
+	padding: 20px;
 }
