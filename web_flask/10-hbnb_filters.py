@@ -14,8 +14,12 @@ def hbnb_filters():
     """
     Display a HTML page that shows States and Amenities
     """
-    states = storage.all("State")
-    amenities = storage.all("Amenity")
+    state_obj = storage.all("State")
+    states = [v for k, v in state_obj.items()]
+    states.sort(key=lambda x: x.name)
+    amenity_obj = storage.all("Amenity")
+    amenities = [v for k, v in amenity_obj.items()]
+    amenities.sort(key=lambda x: x.name)
     return render_template("10-hbnb_filters.html", states=states,
                            amenities=amenities)
 
@@ -29,4 +33,4 @@ def tear_down(response_or_exc):
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
